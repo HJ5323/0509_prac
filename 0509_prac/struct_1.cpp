@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -16,7 +17,15 @@ struct Rectangle {
 int main()
 {
 	Rectangle rec;
+	//cout << "가로, 세로 길이를 입력하세요. : ";
+	//cin >> rec.width >> rec.height;
+	//cout << "넓이는 : " << rec.width * rec.height << endl;
+	
+	string input;
 	cout << "가로, 세로 길이를 입력하세요. : ";
-	cin >> rec.width >> rec.height;
-	cout << "직사각형 넓이는 : " << rec.width * rec.height << endl;
+	getline(cin, input);
+	stringstream ss(input);
+	ss >> rec.width >> rec.height;
+	cout << "넓이는 : " << rec.width * rec.height << endl;
+
 }
